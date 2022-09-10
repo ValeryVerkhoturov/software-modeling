@@ -10,9 +10,9 @@
 		<right_margin>30</right_margin>
 	</page_setting>
 	<category_index>0</category_index>
-	<zoom>0.75</zoom>
+	<zoom>0.8</zoom>
 	<x>0</x>
-	<y>143</y>
+	<y>0</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2022-09-02 17:14:20</creation_date>
-			<updated_date>2022-09-10 22:53:41</updated_date>
+			<updated_date>2022-09-10 22:56:09</updated_date>
 			<model_property>
 				<name>Project Name</name>
 				<value></value>
@@ -755,8 +755,8 @@
 			<width>215</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>241</x>
-			<y>324</y>
+			<x>126</x>
+			<y>134</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -853,8 +853,8 @@
 			<width>193</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>348</x>
-			<y>240</y>
+			<x>233</x>
+			<y>50</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -951,8 +951,8 @@
 			<width>214</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>242</x>
-			<y>408</y>
+			<x>127</x>
+			<y>218</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1049,8 +1049,8 @@
 			<width>296</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>160</x>
-			<y>636</y>
+			<x>45</x>
+			<y>446</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1147,8 +1147,8 @@
 			<width>296</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>160</x>
-			<y>504</y>
+			<x>45</x>
+			<y>314</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1320,12 +1320,12 @@
 		</table>
 		<table>
 			<id>5</id>
-			<height>129</height>
+			<height>163</height>
 			<width>219</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>237</x>
-			<y>726</y>
+			<x>122</x>
+			<y>536</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1648,8 +1648,8 @@
 			<width>209</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>504</x>
-			<y>759</y>
+			<x>389</x>
+			<y>569</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1798,12 +1798,12 @@
 		</table>
 		<table>
 			<id>7</id>
-			<height>78</height>
-			<width>257</width>
+			<height>95</height>
+			<width>321</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>744</x>
-			<y>759</y>
+			<x>629</x>
+			<y>569</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1956,8 +1956,8 @@
 			<width>278</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>552</x>
-			<y>231</y>
+			<x>437</x>
+			<y>41</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -2133,8 +2133,8 @@
 			<width>217</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>876</x>
-			<y>231</y>
+			<x>761</x>
+			<y>41</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -2227,12 +2227,12 @@
 		</table>
 		<table>
 			<id>10</id>
-			<height>350</height>
+			<height>367</height>
 			<width>520</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>528</x>
-			<y>360</y>
+			<x>413</x>
+			<y>170</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
