@@ -1,0 +1,912 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Зоологическая коллекция</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+	</head>
+<script>
+function asd() {
+	parent.document.title="Зоологическая коллекция";
+}
+</script>
+
+	<body onload="asd();">
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">Overview</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">Object type</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								Table&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">Help</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="9.html" ><b>PREV Table</b></a>&nbsp;&nbsp;
+					&nbsp;<b>NEXT Table</b>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="10.html" target="_top">NO FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">All Objects</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">All Objects</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+		<a name="main"></a>
+		<h2>Table   Зоологическая коллекция</h2>
+		<hr>
+
+
+<dl>
+	<dt><b>Physical Name:</b></dt>
+		<dd>ZOO_COLLECTION<br><br></dd>
+</dl>
+
+<dl>
+	<dt><b>Constraint:</b></dt>
+		<dd><br><br></dd>
+</dl>
+
+<pre style="font-size:1em;">
+
+</pre>
+
+<p>
+
+<!-- ======== Attribute ======== -->
+
+<a name="attribute_summary"></a>
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Attribute Summary</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>PK</th>
+		<th>FK</th>
+		<th>Logical Name</th>
+		<th>Physical Name</th>
+		<th>Type</th>
+		<th>UNIQUE</th>
+		<th>NOT NULL</th>
+	</tr>
+	<tr>
+	<tr>
+	<td align="center"><img src="../image/icons/pkey.gif">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#65">Код зоологической коллекции</a>&nbsp;</td>
+	<td>ZOO_COLLECTION_ID&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#81">Номер государственной регистрации</a>&nbsp;</td>
+	<td>GOV_REGISTRATION_NUMBER&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">UNIQUE&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#82">Дата регистрации</a>&nbsp;</td>
+	<td>REGISTRATION_DATE&nbsp;</td>
+	<td>date&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#83">Наименование коллекции</a>&nbsp;</td>
+	<td>COLLECTION_NAME&nbsp;</td>
+	<td>varchar(100)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#84">Фамилия владельца</a>&nbsp;</td>
+	<td>OWNER_LAST_NAME&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#85">Имя владельца</a>&nbsp;</td>
+	<td>OWNER_FIRST_NAME&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#86">Отчество владельца</a>&nbsp;</td>
+	<td>OWNER_MIDDLE_NAME&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#56">Код ФИАС владельца</a>&nbsp;</td>
+	<td>OWNER_FIAS_ID&nbsp;</td>
+	<td>char(36)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#55">Код ФИАС зоологической коллекции</a>&nbsp;</td>
+	<td>ZOO_COLLECTION_FIAS_ID&nbsp;</td>
+	<td>char(36)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#59">Код форм собственности</a>&nbsp;</td>
+	<td>OWNERSHIP_TYPE_ID&nbsp;</td>
+	<td>smallint&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#49">Код назначения собственности</a>&nbsp;</td>
+	<td>APPOINTMENT_ID&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#87">Год основания коллекции</a>&nbsp;</td>
+	<td>YEAR_OF_COLLECTION_FOUNDATION&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#88">Номер перерегистрации</a>&nbsp;</td>
+	<td>NUMBER_OF_REREGISTRATION&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#89">Код заключения экспертной группы по зоологическим коллекциям</a>&nbsp;</td>
+	<td>OPINION_ID_OF_THE_EXPERT_GROUP_OF_ZOOLOGICAL_COLLECTION&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">UNIQUE&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#90">Фамилия выдавшего свидетельство о внесении колеекции в реестр</a>&nbsp;</td>
+	<td>LAST_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#91">Имя выдавшего свидетельство о внесении колеекции в реестр</a>&nbsp;</td>
+	<td>FIRST_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#92">Отчество выдавшего свидетельство о внесении колеекции в реестр</a>&nbsp;</td>
+	<td>MIDDLE_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER&nbsp;</td>
+	<td>varchar(30)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#93">Код ОКПРТР выдавшего свидетельство о внесении колеекции в реестр</a>&nbsp;</td>
+	<td>OKPRTR_ID_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#94">Номер свидетельства о внесении коллекции в реестр</a>&nbsp;</td>
+	<td>NUMBER_OF_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">UNIQUE&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+
+	</tr>
+</table>
+
+<p>
+
+<!-- ========== FOREIGN KEY =========== -->
+
+<a name="foreign_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Foreign Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">Attribute</th>
+		<th width="28%">Referenced Table</th>
+		<th width="12%">Referenced Key</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">Cardinality of parent</th>
+		<th width="12%">Cardinality of child</th>
+	</tr>
+	<tr>
+	<td><a href="#56">Код ФИАС владельца&nbsp;</a></td>
+	<td><a href="../table/2.html">Классификатор ФИАС&nbsp;</a></td>
+	<td><a href="../table/2.html#53">Код ФИАС&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#55">Код ФИАС зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/2.html">Классификатор ФИАС&nbsp;</a></td>
+	<td><a href="../table/2.html#53">Код ФИАС&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#59">Код форм собственности&nbsp;</a></td>
+	<td><a href="../table/3.html">К-р форм собственности&nbsp;</a></td>
+	<td><a href="../table/3.html#57">Код форм собственности&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#49">Код назначения собственности&nbsp;</a></td>
+	<td><a href="../table/0.html">К-р назначения коллекции&nbsp;</a></td>
+	<td><a href="../table/0.html#47">Код назначения собственности&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+
+</table>
+
+<p>
+
+<!-- ========== REFERENCE KEY =========== -->
+
+<a name="reference_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Referenced Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">Attribute</th>
+		<th width="28%">Table</th>
+		<th width="12%">Foreign Key</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">Cardinality of parent</th>
+		<th width="12%">Cardinality of child</th>
+	</tr>
+	<tr>
+	<td><a href="#65">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/5.html">COLLCTION_DESCRIPTION&nbsp;</a></td>
+	<td><a href="../table/5.html#64">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#65">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/6.html">COLLECTION_GROUP&nbsp;</a></td>
+	<td><a href="../table/6.html#67">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#65">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/7.html">Объект коллекции&nbsp;</a></td>
+	<td><a href="../table/7.html#71">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#65">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/8.html">Документы о происхождениии коллекции&nbsp;</a></td>
+	<td><a href="../table/8.html#77">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#65">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/9.html">Условия хранения коллекции&nbsp;</a></td>
+	<td><a href="../table/9.html#80">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+
+</table>
+
+<p>
+
+<!-- ========== Complex Unique Key =========== -->
+
+<a name="complex_unique_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="1">Complex Unique Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>&nbsp;</th>
+		
+	</tr>
+	
+</table>
+
+
+
+<p>
+
+<!-- ========== INDEX SUMMARY =========== -->
+
+<a name="index_summary"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="3">Index Summary</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>Index Name</th>
+		<th>Type</th>
+		<th>UNIQUE</th>
+	</tr>
+	
+</table>
+
+<p>
+
+
+
+
+
+<p>
+
+<!-- ============ ATTRIBUTE DETAIL =========== -->
+
+<a name="attribute_detail"></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th>Attribute Detail</th>
+	</tr>
+</table>
+
+<a name="65"></a>
+<h3><img src="../image/icons/pkey.gif">  Код зоологической коллекции</h3>
+
+<dl>
+	<dd>ZOO_COLLECTION_ID
+	<p>
+	<dd><pre>Код зоологической коллекции</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="81"></a>
+<h3>  Номер государственной регистрации</h3>
+
+<dl>
+	<dd>GOV_REGISTRATION_NUMBER
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>TRUE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="82"></a>
+<h3>  Дата регистрации</h3>
+
+<dl>
+	<dd>REGISTRATION_DATE
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>date<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="83"></a>
+<h3>  Наименование коллекции</h3>
+
+<dl>
+	<dd>COLLECTION_NAME
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(100)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="84"></a>
+<h3>  Фамилия владельца</h3>
+
+<dl>
+	<dd>OWNER_LAST_NAME
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="85"></a>
+<h3>  Имя владельца</h3>
+
+<dl>
+	<dd>OWNER_FIRST_NAME
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="86"></a>
+<h3>  Отчество владельца</h3>
+
+<dl>
+	<dd>OWNER_MIDDLE_NAME
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="56"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код ФИАС владельца</h3>
+
+<dl>
+	<dd>OWNER_FIAS_ID
+	<p>
+	<dd><pre>Код адреса в Федеральной информационной адресной системе</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>char(36)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="55"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код ФИАС зоологической коллекции</h3>
+
+<dl>
+	<dd>ZOO_COLLECTION_FIAS_ID
+	<p>
+	<dd><pre>Код адреса в Федеральной информационной адресной системе</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>char(36)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="59"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код форм собственности</h3>
+
+<dl>
+	<dd>OWNERSHIP_TYPE_ID
+	<p>
+	<dd><pre>Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
+
+2 цифры
+
+https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>smallint<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="49"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код назначения собственности</h3>
+
+<dl>
+	<dd>APPOINTMENT_ID
+	<p>
+	<dd><pre>Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
+</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="87"></a>
+<h3>  Год основания коллекции</h3>
+
+<dl>
+	<dd>YEAR_OF_COLLECTION_FOUNDATION
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="88"></a>
+<h3>  Номер перерегистрации</h3>
+
+<dl>
+	<dd>NUMBER_OF_REREGISTRATION
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b>0<br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="89"></a>
+<h3>  Код заключения экспертной группы по зоологическим коллекциям</h3>
+
+<dl>
+	<dd>OPINION_ID_OF_THE_EXPERT_GROUP_OF_ZOOLOGICAL_COLLECTION
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>TRUE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="90"></a>
+<h3>  Фамилия выдавшего свидетельство о внесении колеекции в реестр</h3>
+
+<dl>
+	<dd>LAST_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="91"></a>
+<h3>  Имя выдавшего свидетельство о внесении колеекции в реестр</h3>
+
+<dl>
+	<dd>FIRST_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="92"></a>
+<h3>  Отчество выдавшего свидетельство о внесении колеекции в реестр</h3>
+
+<dl>
+	<dd>MIDDLE_NAME_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>Type : </b>varchar(30)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="93"></a>
+<h3>  Код ОКПРТР выдавшего свидетельство о внесении колеекции в реестр</h3>
+
+<dl>
+	<dd>OKPRTR_ID_OF_PERSON_ISSUED_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER
+	<p>
+	<dd><pre>5 цифр 
+Общероссийский классификатор профессий рабочих, должностей служащих и тарифных разрядов</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="94"></a>
+<h3>  Номер свидетельства о внесении коллекции в реестр</h3>
+
+<dl>
+	<dd>NUMBER_OF_THE_CERTIFICATE_OF_ENTRY_IN_THE_REGISTER
+	<p>
+	<dd><pre>Требуется согласно форме реестра зоологических коллекций, поставленных на государственный учет https://docs.cntd.ru/document/58812875</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>TRUE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+
+
+
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">Overview</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">Object type</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								Table&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">Help</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="9.html" ><b>PREV Table</b></a>&nbsp;&nbsp;
+					&nbsp;<b>NEXT Table</b>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="10.html" target="_top">NO FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">All Objects</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">All Objects</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+
+	</body>
+</HTML>

@@ -1,0 +1,519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Объект коллекции</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+	</head>
+<script>
+function asd() {
+	parent.document.title="Объект коллекции";
+}
+</script>
+
+	<body onload="asd();">
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">Overview</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">Object type</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								Table&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">Help</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="6.html" ><b>PREV Table</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="8.html" ><b>NEXT Table</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="7.html" target="_top">NO FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">All Objects</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">All Objects</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+		<a name="main"></a>
+		<h2>Table   Объект коллекции</h2>
+		<hr>
+
+
+<dl>
+	<dt><b>Physical Name:</b></dt>
+		<dd>COLLECTION_OBJECT<br><br></dd>
+</dl>
+
+<dl>
+	<dt><b>Constraint:</b></dt>
+		<dd><br><br></dd>
+</dl>
+
+<pre style="font-size:1em;">
+
+</pre>
+
+<p>
+
+<!-- ======== Attribute ======== -->
+
+<a name="attribute_summary"></a>
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Attribute Summary</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>PK</th>
+		<th>FK</th>
+		<th>Logical Name</th>
+		<th>Physical Name</th>
+		<th>Type</th>
+		<th>UNIQUE</th>
+		<th>NOT NULL</th>
+	</tr>
+	<tr>
+	<tr>
+	<td align="center"><img src="../image/icons/pkey.gif">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#70">Код объекта коллекции</a>&nbsp;</td>
+	<td>COLLECTION_OBJECT_ID&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#71">Код зоологической коллекции</a>&nbsp;</td>
+	<td>ZOO_COLLECTION_ID&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#69">Код группы коллекции</a>&nbsp;</td>
+	<td>COLLECTION_GROUP_ID&nbsp;</td>
+	<td>int&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#72">Наименование объекта коллекции</a>&nbsp;</td>
+	<td>NAME&nbsp;</td>
+	<td>varchar(50)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#73">Является уникальным объктом</a>&nbsp;</td>
+	<td>IS_UNIQUE_OBJECT&nbsp;</td>
+	<td>boolean&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#74">Дата внесения объекта в зоологическую колекцию</a>&nbsp;</td>
+	<td>DATE_FROM&nbsp;</td>
+	<td>date&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#75">Дата исключения объекта из зоологической коллекции</a>&nbsp;</td>
+	<td>DATE_TO&nbsp;</td>
+	<td>date&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+
+	</tr>
+</table>
+
+<p>
+
+<!-- ========== FOREIGN KEY =========== -->
+
+<a name="foreign_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Foreign Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">Attribute</th>
+		<th width="28%">Referenced Table</th>
+		<th width="12%">Referenced Key</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">Cardinality of parent</th>
+		<th width="12%">Cardinality of child</th>
+	</tr>
+	<tr>
+	<td><a href="#71">Код зоологической коллекции&nbsp;</a></td>
+	<td><a href="../table/10.html">Зоологическая коллекция&nbsp;</a></td>
+	<td><a href="../table/10.html#65">Код зоологической коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#69">Код группы коллекции&nbsp;</a></td>
+	<td><a href="../table/6.html">COLLECTION_GROUP&nbsp;</a></td>
+	<td><a href="../table/6.html#66">Код группы коллекции&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+
+</table>
+
+<p>
+
+<!-- ========== REFERENCE KEY =========== -->
+
+<a name="reference_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">Referenced Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">Attribute</th>
+		<th width="28%">Table</th>
+		<th width="12%">Foreign Key</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">Cardinality of parent</th>
+		<th width="12%">Cardinality of child</th>
+	</tr>
+	
+</table>
+
+<p>
+
+<!-- ========== Complex Unique Key =========== -->
+
+<a name="complex_unique_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="2">Complex Unique Key</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>&nbsp;</th>
+				<th>&nbsp;</th>
+
+	</tr>
+		<tr>
+		<th class="TableSubHeadingColor" align="left">Код объекта коллекции&nbsp;</th>
+				<td align="center">1&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Код зоологической коллекции&nbsp;</th>
+				<td align="center">2&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Код группы коллекции&nbsp;</th>
+				<td align="center">3&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Наименование объекта коллекции&nbsp;</th>
+				<td align="center">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Является уникальным объктом&nbsp;</th>
+				<td align="center">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Дата внесения объекта в зоологическую колекцию&nbsp;</th>
+				<td align="center">&nbsp;</td>
+
+	</tr>
+	<tr>
+		<th class="TableSubHeadingColor" align="left">Дата исключения объекта из зоологической коллекции&nbsp;</th>
+				<td align="center">&nbsp;</td>
+
+	</tr>
+
+</table>
+
+
+
+<p>
+
+<!-- ========== INDEX SUMMARY =========== -->
+
+<a name="index_summary"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="3">Index Summary</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>Index Name</th>
+		<th>Type</th>
+		<th>UNIQUE</th>
+	</tr>
+	
+</table>
+
+<p>
+
+
+
+
+
+<p>
+
+<!-- ============ ATTRIBUTE DETAIL =========== -->
+
+<a name="attribute_detail"></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th>Attribute Detail</th>
+	</tr>
+</table>
+
+<a name="70"></a>
+<h3><img src="../image/icons/pkey.gif">  Код объекта коллекции</h3>
+
+<dl>
+	<dd>COLLECTION_OBJECT_ID
+	<p>
+	<dd><pre>Суррогатный ключ</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="71"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код зоологической коллекции</h3>
+
+<dl>
+	<dd>ZOO_COLLECTION_ID
+	<p>
+	<dd><pre>Код зоологической коллекции</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="69"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> Код группы коллекции</h3>
+
+<dl>
+	<dd>COLLECTION_GROUP_ID
+	<p>
+	<dd><pre>Суррогатный ключ</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>int<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="72"></a>
+<h3>  Наименование объекта коллекции</h3>
+
+<dl>
+	<dd>NAME
+	<p>
+	<dd><pre>Номенклатура объекта</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>varchar(50)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="73"></a>
+<h3>  Является уникальным объктом</h3>
+
+<dl>
+	<dd>IS_UNIQUE_OBJECT
+	<p>
+	<dd><pre>Занесен в Красную Книгу РФ?</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>boolean<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="74"></a>
+<h3>  Дата внесения объекта в зоологическую колекцию</h3>
+
+<dl>
+	<dd>DATE_FROM
+	<p>
+	<dd><pre>Для отслеживания изменений (оборота) коллекции</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>Type : </b>date<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="75"></a>
+<h3>  Дата исключения объекта из зоологической коллекции</h3>
+
+<dl>
+	<dd>DATE_TO
+	<p>
+	<dd><pre>Для отслеживания изменений (оборота) коллекции</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>Type : </b>date<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>Default Value : </b><br></dt>
+		<dt><b>Constraint : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+
+
+
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">Overview</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">Object type</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								Table&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">Help</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="6.html" ><b>PREV Table</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="8.html" ><b>NEXT Table</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="7.html" target="_top">NO FRAMES</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">All Objects</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">All Objects</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+
+	</body>
+</HTML>
