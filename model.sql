@@ -18,20 +18,20 @@ DROP TABLE IF EXISTS CLASSIFIER_STORAGE_CONDITIONS;
 
 /* Create Tables */
 
--- К-р назначения коллекции
+-- Классификатор назначения коллекции
 CREATE TABLE CLASSIFIER_APPOINTMENT
 (
 	-- Код назначения собственности : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
 	-- 
 	APPOINTMENT_ID int NOT NULL,
-	-- Наименование : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
+	-- Наименование назначения коллекции : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
 	-- 
-	NAME varchar(100) NOT NULL,
+	APPOINTMENT_NAME varchar(100) NOT NULL,
 	PRIMARY KEY (APPOINTMENT_ID)
 ) WITHOUT OIDS;
 
 
--- К-р описания коллекции
+-- Классификатор описания коллекции
 CREATE TABLE CLASSIFIER_COLLECTION_DESCRIPTION
 (
 	-- Код описания коллекции : Суррогатный ключ
@@ -39,7 +39,7 @@ CREATE TABLE CLASSIFIER_COLLECTION_DESCRIPTION
 	-- живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.
 	COLLECTION_DESCRIPTION_CLASSIFIER_ID int NOT NULL,
 	-- Наименование описания коллекции : живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.
-	NAME varchar(50) NOT NULL,
+	COLLECTION_DESCRIPTION_NAME varchar(50) NOT NULL,
 	PRIMARY KEY (COLLECTION_DESCRIPTION_CLASSIFIER_ID)
 ) WITHOUT OIDS;
 
@@ -55,7 +55,7 @@ CREATE TABLE CLASSIFIER_FIAS
 ) WITHOUT OIDS;
 
 
--- К-р форм собственности
+-- Классификатор форм собственности
 CREATE TABLE CLASSIFIER_OWNERSHIP_TYPE
 (
 	-- Код форм собственности : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
@@ -63,27 +63,27 @@ CREATE TABLE CLASSIFIER_OWNERSHIP_TYPE
 	-- 2 цифры
 	-- 
 	-- https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/
-	ID smallint NOT NULL,
+	OWNERSHIP_TYPE_ID smallint NOT NULL,
 	-- Наименование форм собственнсти : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
 	-- 
 	-- https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/
-	Name varchar(100) NOT NULL,
-	PRIMARY KEY (ID)
+	OWNERSHIP_TYPE_NAME varchar(100) NOT NULL,
+	PRIMARY KEY (OWNERSHIP_TYPE_ID)
 ) WITHOUT OIDS;
 
 
--- К-р условий хранения
+-- Классификатор условий хранения
 CREATE TABLE CLASSIFIER_STORAGE_CONDITIONS
 (
 	-- Код условия хранения коллекции : Суррогатный ключ
 	STORAGE_CONDITION_ID int NOT NULL,
 	-- Наименование условия хранения : https://www.garant.ru/hotlaw/federal/1158312/
-	NAME varchar(100) NOT NULL,
+	STORAGE_CONDITION_NAME varchar(100) NOT NULL,
 	PRIMARY KEY (STORAGE_CONDITION_ID)
 ) WITHOUT OIDS;
 
 
--- COLLCTION_DESCRIPTION
+-- Описание коллекции
 CREATE TABLE COLLCTION_DESCRIPTION
 (
 	-- Код описания коллекции : Описание коллекции (живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.)
@@ -98,7 +98,7 @@ CREATE TABLE COLLCTION_DESCRIPTION
 ) WITHOUT OIDS;
 
 
--- COLLECTION_GROUP
+-- Группы коллекции
 CREATE TABLE COLLECTION_GROUP
 (
 	-- Код группы коллекции : Суррогатный ключ
@@ -106,7 +106,7 @@ CREATE TABLE COLLECTION_GROUP
 	-- Код зоологической коллекции : Код зоологической коллекции
 	ZOO_COLLECTION_ID int NOT NULL,
 	-- Наименование группы коллекции : Название группы
-	NAME varchar(50) NOT NULL,
+	COLLECTION_GROUP_NAME varchar(50) NOT NULL,
 	PRIMARY KEY (COLLECTION_GROUP_ID)
 ) WITHOUT OIDS;
 
@@ -121,7 +121,7 @@ CREATE TABLE COLLECTION_OBJECT
 	-- Код группы коллекции : Суррогатный ключ
 	COLLECTION_GROUP_ID int NOT NULL,
 	-- Наименование объекта коллекции : Номенклатура объекта
-	NAME varchar(50) NOT NULL,
+	COLLECTION_OBJECT_NAME varchar(50) NOT NULL,
 	-- Является уникальным объктом : Занесен в Красную Книгу РФ?
 	IS_UNIQUE_OBJECT boolean NOT NULL,
 	-- Дата внесения объекта в зоологическую колекцию : Для отслеживания изменений (оборота) коллекции
@@ -141,7 +141,7 @@ CREATE TABLE COLLECTION_ORIGIN_DOCUEMENTS
 	-- Код зоологической коллекции : Код зоологической коллекции
 	ZOO_COLLECTION_ID int NOT NULL,
 	-- Ссылка на документ о происхождении коллекции : Ссылка на внешний ресурс
-	COLLECTION_ORIGIN_DOCUMENT_URL varchar(100) NOT NULL,
+	COLLECTION_ORIGIN_DOCUMENT_URL varchar(200) NOT NULL,
 	PRIMARY KEY (COLLECTION_ORIGIN_DOCUMENT_ID)
 ) WITHOUT OIDS;
 
@@ -230,14 +230,6 @@ ALTER TABLE COLLCTION_DESCRIPTION
 
 
 ALTER TABLE ZOO_COLLECTION
-	ADD FOREIGN KEY (ZOO_COLLECTION_FIAS_ID)
-	REFERENCES CLASSIFIER_FIAS (FIAS_ID)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
-
-ALTER TABLE ZOO_COLLECTION
 	ADD FOREIGN KEY (OWNER_FIAS_ID)
 	REFERENCES CLASSIFIER_FIAS (FIAS_ID)
 	ON UPDATE RESTRICT
@@ -246,8 +238,16 @@ ALTER TABLE ZOO_COLLECTION
 
 
 ALTER TABLE ZOO_COLLECTION
+	ADD FOREIGN KEY (ZOO_COLLECTION_FIAS_ID)
+	REFERENCES CLASSIFIER_FIAS (FIAS_ID)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;
+
+
+ALTER TABLE ZOO_COLLECTION
 	ADD FOREIGN KEY (OWNERSHIP_TYPE_ID)
-	REFERENCES CLASSIFIER_OWNERSHIP_TYPE (ID)
+	REFERENCES CLASSIFIER_OWNERSHIP_TYPE (OWNERSHIP_TYPE_ID)
 	ON UPDATE RESTRICT
 	ON DELETE RESTRICT
 ;
@@ -312,46 +312,46 @@ ALTER TABLE COLLECTION_STORAGE_CONDITIONS
 
 /* Comments */
 
-COMMENT ON TABLE CLASSIFIER_APPOINTMENT IS 'К-р назначения коллекции';
+COMMENT ON TABLE CLASSIFIER_APPOINTMENT IS 'Классификатор назначения коллекции';
 COMMENT ON COLUMN CLASSIFIER_APPOINTMENT.APPOINTMENT_ID IS 'Код назначения собственности : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
 ';
-COMMENT ON COLUMN CLASSIFIER_APPOINTMENT.NAME IS 'Наименование : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
+COMMENT ON COLUMN CLASSIFIER_APPOINTMENT.APPOINTMENT_NAME IS 'Наименование назначения коллекции : Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.
 ';
-COMMENT ON TABLE CLASSIFIER_COLLECTION_DESCRIPTION IS 'К-р описания коллекции';
+COMMENT ON TABLE CLASSIFIER_COLLECTION_DESCRIPTION IS 'Классификатор описания коллекции';
 COMMENT ON COLUMN CLASSIFIER_COLLECTION_DESCRIPTION.COLLECTION_DESCRIPTION_CLASSIFIER_ID IS 'Код описания коллекции : Суррогатный ключ
 
 живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.';
-COMMENT ON COLUMN CLASSIFIER_COLLECTION_DESCRIPTION.NAME IS 'Наименование описания коллекции : живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.';
+COMMENT ON COLUMN CLASSIFIER_COLLECTION_DESCRIPTION.COLLECTION_DESCRIPTION_NAME IS 'Наименование описания коллекции : живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.';
 COMMENT ON TABLE CLASSIFIER_FIAS IS 'Классификатор ФИАС';
 COMMENT ON COLUMN CLASSIFIER_FIAS.FIAS_ID IS 'Код ФИАС : Код адреса в Федеральной информационной адресной системе';
 COMMENT ON COLUMN CLASSIFIER_FIAS.FULL_ADDRESS IS 'Адрес : Наименование адреса в Федеральной информационной адресной системе';
-COMMENT ON TABLE CLASSIFIER_OWNERSHIP_TYPE IS 'К-р форм собственности';
-COMMENT ON COLUMN CLASSIFIER_OWNERSHIP_TYPE.ID IS 'Код форм собственности : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
+COMMENT ON TABLE CLASSIFIER_OWNERSHIP_TYPE IS 'Классификатор форм собственности';
+COMMENT ON COLUMN CLASSIFIER_OWNERSHIP_TYPE.OWNERSHIP_TYPE_ID IS 'Код форм собственности : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
 
 2 цифры
 
 https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/';
-COMMENT ON COLUMN CLASSIFIER_OWNERSHIP_TYPE.Name IS 'Наименование форм собственнсти : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
+COMMENT ON COLUMN CLASSIFIER_OWNERSHIP_TYPE.OWNERSHIP_TYPE_NAME IS 'Наименование форм собственнсти : Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) "О принятии и введении в действие Общероссийских классификаторов" (вместе с "ОК 027-99. Общероссийский классификатор форм собственности") (дата введения 01.01.2000)
 
 https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/';
-COMMENT ON TABLE CLASSIFIER_STORAGE_CONDITIONS IS 'К-р условий хранения';
+COMMENT ON TABLE CLASSIFIER_STORAGE_CONDITIONS IS 'Классификатор условий хранения';
 COMMENT ON COLUMN CLASSIFIER_STORAGE_CONDITIONS.STORAGE_CONDITION_ID IS 'Код условия хранения коллекции : Суррогатный ключ';
-COMMENT ON COLUMN CLASSIFIER_STORAGE_CONDITIONS.NAME IS 'Наименование условия хранения : https://www.garant.ru/hotlaw/federal/1158312/';
-COMMENT ON TABLE COLLCTION_DESCRIPTION IS 'COLLCTION_DESCRIPTION';
+COMMENT ON COLUMN CLASSIFIER_STORAGE_CONDITIONS.STORAGE_CONDITION_NAME IS 'Наименование условия хранения : https://www.garant.ru/hotlaw/federal/1158312/';
+COMMENT ON TABLE COLLCTION_DESCRIPTION IS 'Описание коллекции';
 COMMENT ON COLUMN COLLCTION_DESCRIPTION.ID_COLLECTION_DESCRIPTION IS 'Код описания коллекции : Описание коллекции (живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.)';
 COMMENT ON COLUMN COLLCTION_DESCRIPTION.COLLECTION_DESCRIPTION_CLASSIFIER_ID IS 'Код описания коллекции : Суррогатный ключ
 
 живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.';
 COMMENT ON COLUMN COLLCTION_DESCRIPTION.ZOO_COLLECTION_ID IS 'Код зоологической коллекции : Код зоологической коллекции';
-COMMENT ON TABLE COLLECTION_GROUP IS 'COLLECTION_GROUP';
+COMMENT ON TABLE COLLECTION_GROUP IS 'Группы коллекции';
 COMMENT ON COLUMN COLLECTION_GROUP.COLLECTION_GROUP_ID IS 'Код группы коллекции : Суррогатный ключ';
 COMMENT ON COLUMN COLLECTION_GROUP.ZOO_COLLECTION_ID IS 'Код зоологической коллекции : Код зоологической коллекции';
-COMMENT ON COLUMN COLLECTION_GROUP.NAME IS 'Наименование группы коллекции : Название группы';
+COMMENT ON COLUMN COLLECTION_GROUP.COLLECTION_GROUP_NAME IS 'Наименование группы коллекции : Название группы';
 COMMENT ON TABLE COLLECTION_OBJECT IS 'Объект коллекции';
 COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_OBJECT_ID IS 'Код объекта коллекции : Суррогатный ключ';
 COMMENT ON COLUMN COLLECTION_OBJECT.ZOO_COLLECTION_ID IS 'Код зоологической коллекции : Код зоологической коллекции';
 COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_GROUP_ID IS 'Код группы коллекции : Суррогатный ключ';
-COMMENT ON COLUMN COLLECTION_OBJECT.NAME IS 'Наименование объекта коллекции : Номенклатура объекта';
+COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_OBJECT_NAME IS 'Наименование объекта коллекции : Номенклатура объекта';
 COMMENT ON COLUMN COLLECTION_OBJECT.IS_UNIQUE_OBJECT IS 'Является уникальным объктом : Занесен в Красную Книгу РФ?';
 COMMENT ON COLUMN COLLECTION_OBJECT.DATE_FROM IS 'Дата внесения объекта в зоологическую колекцию : Для отслеживания изменений (оборота) коллекции';
 COMMENT ON COLUMN COLLECTION_OBJECT.DATE_TO IS 'Дата исключения объекта из зоологической коллекции : Для отслеживания изменений (оборота) коллекции';
