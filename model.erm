@@ -12,7 +12,7 @@
 	<category_index>0</category_index>
 	<zoom>0.8</zoom>
 	<x>0</x>
-	<y>0</y>
+	<y>35</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2022-09-02 17:14:20</creation_date>
-			<updated_date>2022-09-10 22:56:09</updated_date>
+			<updated_date>2022-09-11 17:05:05</updated_date>
 			<model_property>
 				<name>Project Name</name>
 				<value></value>
@@ -187,6 +187,22 @@
 		</word>
 		<word>
 			<id>1</id>
+			<length>100</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.&#x0A;</description>
+			<logical_name>Наименование назначения коллекции</logical_name>
+			<physical_name>APPOINTMENT_NAME</physical_name>
+			<type>varchar(n)</type>
+		</word>
+		<word>
+			<id>2</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -202,7 +218,23 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>2</id>
+			<id>3</id>
+			<length>50</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.</description>
+			<logical_name>Наименование описания коллекции</logical_name>
+			<physical_name>COLLECTION_DESCRIPTION_NAME</physical_name>
+			<type>varchar(n)</type>
+		</word>
+		<word>
+			<id>4</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -218,7 +250,23 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>3</id>
+			<id>5</id>
+			<length>50</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>Название группы</description>
+			<logical_name>Наименование группы коллекции</logical_name>
+			<physical_name>COLLECTION_GROUP_NAME</physical_name>
+			<type>varchar(n)</type>
+		</word>
+		<word>
+			<id>6</id>
 			<length>100</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -234,7 +282,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>4</id>
+			<id>7</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -250,7 +298,23 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>5</id>
+			<id>8</id>
+			<length>50</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>Номенклатура объекта</description>
+			<logical_name>Наименование объекта коллекции</logical_name>
+			<physical_name>COLLECTION_OBJECT_NAME</physical_name>
+			<type>varchar(n)</type>
+		</word>
+		<word>
+			<id>9</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -266,8 +330,8 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>6</id>
-			<length>100</length>
+			<id>10</id>
+			<length>200</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -282,7 +346,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>7</id>
+			<id>11</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -298,7 +362,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>8</id>
+			<id>12</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -314,7 +378,7 @@
 			<type>date</type>
 		</word>
 		<word>
-			<id>9</id>
+			<id>13</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -330,7 +394,7 @@
 			<type>date</type>
 		</word>
 		<word>
-			<id>10</id>
+			<id>14</id>
 			<length>36</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -346,7 +410,7 @@
 			<type>character(n)</type>
 		</word>
 		<word>
-			<id>11</id>
+			<id>15</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -362,7 +426,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>12</id>
+			<id>16</id>
 			<length>100</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -378,7 +442,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>13</id>
+			<id>17</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -394,23 +458,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>14</id>
-			<length>null</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) &quot;О принятии и введении в действие Общероссийских классификаторов&quot; (вместе с &quot;ОК 027-99. Общероссийский классификатор форм собственности&quot;) (дата введения 01.01.2000)&#x0A;&#x0A;2 цифры&#x0A;&#x0A;https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/</description>
-			<logical_name>Код форм собственности</logical_name>
-			<physical_name>ID</physical_name>
-			<type>smallint</type>
-		</word>
-		<word>
-			<id>15</id>
+			<id>18</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -426,7 +474,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>16</id>
+			<id>19</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -442,7 +490,7 @@
 			<type>boolean</type>
 		</word>
 		<word>
-			<id>17</id>
+			<id>20</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -458,7 +506,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>18</id>
+			<id>21</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -474,103 +522,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>19</id>
-			<length>100</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>Назначение. Пр.: научное, культурно-просветительное, учебно-воспитательное и др.&#x0A;</description>
-			<logical_name>Наименование</logical_name>
-			<physical_name>NAME</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>20</id>
-			<length>50</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>Название группы</description>
-			<logical_name>Наименование группы коллекции</logical_name>
-			<physical_name>NAME</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>21</id>
-			<length>50</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>Номенклатура объекта</description>
-			<logical_name>Наименование объекта коллекции</logical_name>
-			<physical_name>NAME</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
 			<id>22</id>
-			<length>50</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>живые организмы, чучела, яйца, раковины, сухие и влажные препараты и др.</description>
-			<logical_name>Наименование описания коллекции</logical_name>
-			<physical_name>NAME</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>23</id>
-			<length>100</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>https://www.garant.ru/hotlaw/federal/1158312/</description>
-			<logical_name>Наименование условия хранения</logical_name>
-			<physical_name>NAME</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>24</id>
-			<length>100</length>
-			<decimal>null</decimal>
-			<array>false</array>
-			<array_dimension>null</array_dimension>
-			<unsigned>false</unsigned>
-			<zerofill>false</zerofill>
-			<binary>false</binary>
-			<args></args>
-			<char_semantics>false</char_semantics>
-			<description>Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) &quot;О принятии и введении в действие Общероссийских классификаторов&quot; (вместе с &quot;ОК 027-99. Общероссийский классификатор форм собственности&quot;) (дата введения 01.01.2000)&#x0A;&#x0A;https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/</description>
-			<logical_name>Наименование форм собственнсти</logical_name>
-			<physical_name>Name</physical_name>
-			<type>varchar(n)</type>
-		</word>
-		<word>
-			<id>25</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -586,7 +538,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>26</id>
+			<id>23</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -602,7 +554,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>27</id>
+			<id>24</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -618,7 +570,7 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>28</id>
+			<id>25</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -634,7 +586,39 @@
 			<type>integer</type>
 		</word>
 		<word>
-			<id>29</id>
+			<id>26</id>
+			<length>null</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) &quot;О принятии и введении в действие Общероссийских классификаторов&quot; (вместе с &quot;ОК 027-99. Общероссийский классификатор форм собственности&quot;) (дата введения 01.01.2000)&#x0A;&#x0A;2 цифры&#x0A;&#x0A;https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/</description>
+			<logical_name>Код форм собственности</logical_name>
+			<physical_name>OWNERSHIP_TYPE_ID</physical_name>
+			<type>smallint</type>
+		</word>
+		<word>
+			<id>27</id>
+			<length>100</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>Постановление Госстандарта России от 30.03.1999 N 97 (ред. от 16.10.2012) &quot;О принятии и введении в действие Общероссийских классификаторов&quot; (вместе с &quot;ОК 027-99. Общероссийский классификатор форм собственности&quot;) (дата введения 01.01.2000)&#x0A;&#x0A;https://www.consultant.ru/document/cons_doc_LAW_26587/7a1b896f20475ca2f74d020bb3662a469f7ab994/</description>
+			<logical_name>Наименование форм собственнсти</logical_name>
+			<physical_name>OWNERSHIP_TYPE_NAME</physical_name>
+			<type>varchar(n)</type>
+		</word>
+		<word>
+			<id>28</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -650,7 +634,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>30</id>
+			<id>29</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -666,7 +650,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>31</id>
+			<id>30</id>
 			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -682,7 +666,7 @@
 			<type>varchar(n)</type>
 		</word>
 		<word>
-			<id>32</id>
+			<id>31</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -698,7 +682,7 @@
 			<type>date</type>
 		</word>
 		<word>
-			<id>33</id>
+			<id>32</id>
 			<length>null</length>
 			<decimal>null</decimal>
 			<array>false</array>
@@ -712,6 +696,22 @@
 			<logical_name>Код условия хранения коллекции</logical_name>
 			<physical_name>STORAGE_CONDITION_ID</physical_name>
 			<type>integer</type>
+		</word>
+		<word>
+			<id>33</id>
+			<length>100</length>
+			<decimal>null</decimal>
+			<array>false</array>
+			<array_dimension>null</array_dimension>
+			<unsigned>false</unsigned>
+			<zerofill>false</zerofill>
+			<binary>false</binary>
+			<args></args>
+			<char_semantics>false</char_semantics>
+			<description>https://www.garant.ru/hotlaw/federal/1158312/</description>
+			<logical_name>Наименование условия хранения</logical_name>
+			<physical_name>STORAGE_CONDITION_NAME</physical_name>
+			<type>varchar(n)</type>
 		</word>
 		<word>
 			<id>34</id>
@@ -755,8 +755,8 @@
 			<width>215</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>126</x>
-			<y>134</y>
+			<x>122</x>
+			<y>120</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -772,7 +772,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>10</word_id>
+					<word_id>14</word_id>
 					<id>0</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -805,7 +805,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>12</word_id>
+					<word_id>16</word_id>
 					<id>1</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -850,11 +850,11 @@
 		<table>
 			<id>1</id>
 			<height>78</height>
-			<width>193</width>
+			<width>259</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>233</x>
-			<y>50</y>
+			<x>168</x>
+			<y>41</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -863,14 +863,14 @@
 			<connections>
 			</connections>
 			<physical_name>CLASSIFIER_OWNERSHIP_TYPE</physical_name>
-			<logical_name>К-р форм собственности</logical_name>
+			<logical_name>Классификатор форм собственности</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>14</word_id>
+					<word_id>26</word_id>
 					<id>2</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -903,7 +903,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>24</word_id>
+					<word_id>27</word_id>
 					<id>3</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -948,11 +948,11 @@
 		<table>
 			<id>2</id>
 			<height>86</height>
-			<width>214</width>
+			<width>242</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>127</x>
-			<y>218</y>
+			<x>99</x>
+			<y>216</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -961,7 +961,7 @@
 			<connections>
 			</connections>
 			<physical_name>CLASSIFIER_APPOINTMENT</physical_name>
-			<logical_name>К-р назначения коллекции</logical_name>
+			<logical_name>Классификатор назначения коллекции</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
@@ -1001,7 +1001,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>19</word_id>
+					<word_id>1</word_id>
 					<id>5</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1059,14 +1059,14 @@
 			<connections>
 			</connections>
 			<physical_name>CLASSIFIER_COLLECTION_DESCRIPTION</physical_name>
-			<logical_name>К-р описания коллекции</logical_name>
+			<logical_name>Классификатор описания коллекции</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>1</word_id>
+					<word_id>2</word_id>
 					<id>6</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1099,7 +1099,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>22</word_id>
+					<word_id>3</word_id>
 					<id>7</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1201,14 +1201,14 @@
 				</relation>
 			</connections>
 			<physical_name>COLLCTION_DESCRIPTION</physical_name>
-			<logical_name>COLLCTION_DESCRIPTION</logical_name>
+			<logical_name>Описание коллекции</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>15</word_id>
+					<word_id>18</word_id>
 					<id>8</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1321,11 +1321,11 @@
 		<table>
 			<id>5</id>
 			<height>163</height>
-			<width>219</width>
+			<width>271</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>122</x>
-			<y>536</y>
+			<x>84</x>
+			<y>535</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1385,7 +1385,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>4</word_id>
+					<word_id>7</word_id>
 					<id>11</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1486,7 +1486,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>21</word_id>
+					<word_id>8</word_id>
 					<id>14</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1519,7 +1519,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>16</word_id>
+					<word_id>19</word_id>
 					<id>15</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1552,7 +1552,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>8</word_id>
+					<word_id>12</word_id>
 					<id>16</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1585,7 +1585,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>9</word_id>
+					<word_id>13</word_id>
 					<id>17</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1680,14 +1680,14 @@
 				</relation>
 			</connections>
 			<physical_name>COLLECTION_GROUP</physical_name>
-			<logical_name>COLLECTION_GROUP</logical_name>
+			<logical_name>Группы коллекции</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>2</word_id>
+					<word_id>4</word_id>
 					<id>18</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1754,7 +1754,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>20</word_id>
+					<word_id>5</word_id>
 					<id>20</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1802,7 +1802,7 @@
 			<width>321</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>629</x>
+			<x>672</x>
 			<y>569</y>
 			<color>
 				<r>128</r>
@@ -1841,7 +1841,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>5</word_id>
+					<word_id>9</word_id>
 					<id>21</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1908,7 +1908,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>6</word_id>
+					<word_id>10</word_id>
 					<id>23</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2017,7 +2017,7 @@
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>7</word_id>
+					<word_id>11</word_id>
 					<id>24</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2130,10 +2130,10 @@
 		<table>
 			<id>9</id>
 			<height>78</height>
-			<width>217</width>
+			<width>276</width>
 				<font_name>.AppleSystemUIFont</font_name>
 				<font_size>9</font_size>
-			<x>761</x>
+			<x>756</x>
 			<y>41</y>
 			<color>
 				<r>128</r>
@@ -2143,14 +2143,14 @@
 			<connections>
 			</connections>
 			<physical_name>CLASSIFIER_STORAGE_CONDITIONS</physical_name>
-			<logical_name>К-р условий хранения</logical_name>
+			<logical_name>Классификатор условий хранения</logical_name>
 			<description></description>
 			<constraint></constraint>
 			<primary_key_name></primary_key_name>
 			<option></option>
 			<columns>
 				<normal_column>
-					<word_id>33</word_id>
+					<word_id>32</word_id>
 					<id>27</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2183,7 +2183,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>23</word_id>
+					<word_id>33</word_id>
 					<id>28</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2267,8 +2267,8 @@
 					<target>10</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
-						<target_xp>-1</target_xp>
-						<target_yp>-1</target_yp>
+						<target_xp>0</target_xp>
+						<target_yp>4</target_yp>
 						<color>
 							<r>0</r>
 							<g>0</g>
@@ -2289,8 +2289,8 @@
 					<target>10</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
-						<target_xp>0</target_xp>
-						<target_yp>4</target_yp>
+						<target_xp>-1</target_xp>
+						<target_yp>-1</target_yp>
 						<color>
 							<r>0</r>
 							<g>0</g>
@@ -2369,7 +2369,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>13</word_id>
+					<word_id>17</word_id>
 					<id>30</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2402,7 +2402,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>32</word_id>
+					<word_id>31</word_id>
 					<id>31</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2435,7 +2435,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>3</word_id>
+					<word_id>6</word_id>
 					<id>32</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2468,7 +2468,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>30</word_id>
+					<word_id>29</word_id>
 					<id>33</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2501,7 +2501,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>29</word_id>
+					<word_id>28</word_id>
 					<id>34</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2534,7 +2534,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>31</word_id>
+					<word_id>30</word_id>
 					<id>35</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2569,7 +2569,7 @@
 				<normal_column>
 					<id>36</id>
 					<referenced_column>0</referenced_column>
-					<relation>10</relation>
+					<relation>9</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name>Код ФИАС владельца</logical_name>
@@ -2603,7 +2603,7 @@
 				<normal_column>
 					<id>37</id>
 					<referenced_column>0</referenced_column>
-					<relation>9</relation>
+					<relation>10</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name>Код ФИАС зоологической коллекции</logical_name>
@@ -2736,7 +2736,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>25</word_id>
+					<word_id>22</word_id>
 					<id>41</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2769,7 +2769,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>28</word_id>
+					<word_id>25</word_id>
 					<id>42</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2802,7 +2802,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>17</word_id>
+					<word_id>20</word_id>
 					<id>43</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2835,7 +2835,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>11</word_id>
+					<word_id>15</word_id>
 					<id>44</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2868,7 +2868,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>18</word_id>
+					<word_id>21</word_id>
 					<id>45</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2901,7 +2901,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>27</word_id>
+					<word_id>24</word_id>
 					<id>46</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2934,7 +2934,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>26</word_id>
+					<word_id>23</word_id>
 					<id>47</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
