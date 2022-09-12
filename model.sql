@@ -116,8 +116,6 @@ CREATE TABLE COLLECTION_OBJECT
 (
 	-- Код объекта коллекции : Суррогатный ключ
 	COLLECTION_OBJECT_ID int NOT NULL,
-	-- Код зоологической коллекции : Код зоологической коллекции
-	ZOO_COLLECTION_ID int NOT NULL,
 	-- Код группы коллекции : Суррогатный ключ
 	COLLECTION_GROUP_ID int NOT NULL,
 	-- Наименование объекта коллекции : Номенклатура объекта
@@ -285,14 +283,6 @@ ALTER TABLE COLLECTION_GROUP
 ;
 
 
-ALTER TABLE COLLECTION_OBJECT
-	ADD FOREIGN KEY (ZOO_COLLECTION_ID)
-	REFERENCES ZOO_COLLECTION (ZOO_COLLECTION_ID)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;
-
-
 ALTER TABLE COLLECTION_ORIGIN_DOCUEMENTS
 	ADD FOREIGN KEY (ZOO_COLLECTION_ID)
 	REFERENCES ZOO_COLLECTION (ZOO_COLLECTION_ID)
@@ -349,7 +339,6 @@ COMMENT ON COLUMN COLLECTION_GROUP.ZOO_COLLECTION_ID IS 'Код зоологич
 COMMENT ON COLUMN COLLECTION_GROUP.COLLECTION_GROUP_NAME IS 'Наименование группы коллекции : Название группы';
 COMMENT ON TABLE COLLECTION_OBJECT IS 'Объект коллекции';
 COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_OBJECT_ID IS 'Код объекта коллекции : Суррогатный ключ';
-COMMENT ON COLUMN COLLECTION_OBJECT.ZOO_COLLECTION_ID IS 'Код зоологической коллекции : Код зоологической коллекции';
 COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_GROUP_ID IS 'Код группы коллекции : Суррогатный ключ';
 COMMENT ON COLUMN COLLECTION_OBJECT.COLLECTION_OBJECT_NAME IS 'Наименование объекта коллекции : Номенклатура объекта';
 COMMENT ON COLUMN COLLECTION_OBJECT.IS_UNIQUE_OBJECT IS 'Является уникальным объктом : Занесен в Красную Книгу РФ?';
