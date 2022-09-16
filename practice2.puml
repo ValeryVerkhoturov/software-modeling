@@ -1,0 +1,51 @@
+@startuml
+:Пользователь: as user
+
+usecase (Проверка пользователя) as auth
+user -- auth
+
+usecase (Проверить логин) as login_check
+usecase (Проверить пароль) as password_check
+auth <|-- login_check : <<include>>
+auth <|-- password_check : <<include>>
+
+note "Добавить:\nномер государственной регистрации,\nдату регистрации,\nнаименование коллекции,\nФИО владельца,\nадрес владельца,\nадрес зоологической коллекции,\nформу собственности,\nназначение коллекции,\nгод основания коллекции,\nномер перерегистрации,\nкод заключение экспертной группы,\nданные свидетельства о внесении коллекции в реестр" as zoo_collection_create_note
+usecase (Создать зоологическую коллекцию) as zoo_collection_create
+zoo_collection_create_note .. zoo_collection_create
+user -- zoo_collection_create
+
+note "Выбрать из классификатора" as add_zoo_collection_description_note
+usecase (Добавить описание\nзоологической коллекции) as add_zoo_collection_description
+add_zoo_collection_description .. add_zoo_collection_description_note
+zoo_collection_create --|> add_zoo_collection_description : <<include>>
+
+note "Выбрать из классификатора" as add_zoo_collection_storage_condition_note
+usecase (Добавить условие хранения\nзоологической коллекции) as add_zoo_collection_storage_condition
+add_zoo_collection_storage_condition .. add_zoo_collection_storage_condition_note
+
+zoo_collection_create --|> add_zoo_collection_storage_condition : <<include>>
+
+note "Внешняя ссылка на документы,\nподтверждающие законность владения, \nраспоряжения, сбора коллекции" as add_zoo_collection_documents_url_note
+usecase (Добавить ссылку на документ) as add_zoo_collection_documents_url
+add_zoo_collection_documents_url .. add_zoo_collection_documents_url_note
+zoo_collection_create --|> add_zoo_collection_documents_url : <<include>>
+
+
+note "Добавить:\nимя группы" as zoo_group_create_note
+usecase (Создать группу\nзоологической коллекции) as zoo_group_create
+zoo_group_create .. zoo_group_create_note
+user -- zoo_group_create
+
+note "Добавить:\nимя объекта,\nотметку об уникальности объекта,\nдату добавления в коллекцию" as zoo_object_create_note
+usecase (Создать объект\nзоологической коллекции) as zoo_object_create
+zoo_object_create .. zoo_object_create_note
+user -- zoo_object_create
+usecase (Окончить отслеживание объекта\nзоологической коллекции) as zoo_object_stop_tracking
+user -- zoo_object_stop_tracking
+
+note "Дата окончания отслеживания изменений, оборота \nобъекта зоологической коллекции" as zoo_object_stop_tracking_date_note
+usecase (Добавить дату удаления\nобъекта зоологической коллекции) as zoo_object_stop_tracking_date
+zoo_object_stop_tracking_date .. zoo_object_stop_tracking_date_note
+
+zoo_object_stop_tracking --|> zoo_object_stop_tracking_date : <<include>>
+@enduml
