@@ -1,0 +1,265 @@
+@startuml
+package Database <<Database>> {
+	class DatabaseConnector {
+    	+void connect();
+        +void disconnect();
+    }
+}
+
+
+package Entities {
+	package ZooCollection {
+        class ZooCollection {
+        	-int id;
+            -int governmentRegestrationNumber;
+            -Date registrationDate;
+            -String collectionName;
+            -String ownerFirstName;
+            -String ownerMiddleName;
+            -String ownerLastName;
+            -String ownerAddress;
+            -String zooCollectionAddress;
+            -String ownershipType;
+            -String collectionPurpose;
+            -int collectionFoundationYear;
+            -int reregistrationNumber;
+            -int codeOfExpertGroupConclusion;
+            -int[] collectionDescriptionIds;
+            -int[] collectionStorageConditionIds;
+            -int[] collectionLegalDocumentIds;
+            -int[] collectionGroupIds;
+            
+            +int getId();
+            +void setId(int id);
+            +int getGovernmentRegestrationNumber();
+            +void setGovernmentRegestrationNumber(int governmentRegestrationNumber);
+            +Date getRegistrationDate();
+            +void setRegistrationDate(Date registrationDate);
+            +String getCollectionName();
+            +void setCollectionName(String collectionName);
+            +String getOwnerFirstName();
+            +void setOwnerFirstName(String ownerFirstName);
+            +String getOwnerMiddleName();
+            +void setOwnerMiddleName(String ownerMiddleName);
+            +String getOwnerLastName();
+            +void setOwnerLastName(String ownerLastName);
+            +String getOwnerAddress();
+            +void setOwnerAddress(String ownerAddress);
+            +String getZooCollectionAddress();
+            +void setZooCollectionAddress(String zooCollectionAddress);
+            +String getOwnershipType();
+            +void setOwnershipType(String ownershipType);
+            +String getCollectionPurpose();
+            +void setCollectionPurpose(String collectionPurpose);
+            +int getCollectionFoundationYear();
+            +void setCollectionFoundationYear(int collectionFoundationYear);
+            +int getReregistrationNumber();
+            +void setReregistrationNumber(int reregistrationNumber);
+            +int getCodeOfExpertGroupConclusion();
+            +void setCodeOfExpertGroupConclusion(int codeOfExpertGroupConclusion);
+            +int[] getCollectionDescriptionIds();
+            +void setCollectionDescriptionIds(int[] collectionDescriptionIds);
+            +int[] getCollectionStorageConditionIds();
+            +void setCollectionStorageConditionIds(int[] collectionStorageConditionIds);
+            +void addCollectionStorageConditionIds(int collectionStorageConditionId);
+            +int[] getCollectionLegalDocumentIds();
+            +void setCollectionLegalDocumentIds(int[] collectionLegalDocumentIds);
+            +void addCollectionLegalDocumentIds(int collectionLegalDocumentId);
+            +int[] getCollectionGroupIds();
+            +void setCollectionGroupIds(int[] collectionGroupIds);
+            +void addCollectionGroupIds(int collectionGroupIds);
+        }
+        class ZooCollectionDescription {
+        	-int id;
+            -String description;
+            +int getId();
+            +void setId(int id);
+            +String getDescription();
+            +void setDescription(String description);
+        }
+        class ZooCollectionStorageCondition {
+        	-int id;
+            -String condition;
+            +int getId();
+            +void setId(int id);
+            +String getCondition();
+            +void setCondition(String condition);
+        }
+        class ZooCollectionLegalDocument {
+        	-int id;
+            -String url;
+            +int getId();
+            +void setId(int id);
+            +String getUrl();
+            +void setUrl(String url);
+        }
+        class ZooCollectionGroup {
+        	-int id;
+            -String groupName;
+            +int getId();
+            +void setId(int id);
+            +String getGroupName();
+            +void setgroupName(String groupName);
+        }
+        class ZooCollectionObject {
+        	-int id;
+            -String objectName;
+            -bool uniqueObject;
+            -Date plenishmentDate;
+            +int getId();
+            +void setId(int id);
+            +String getObjectName();
+            +void setObjectName(String objectName);
+            +bool isUniqueObject();
+            +void setUniqueObject(bool uniqueObject);
+            +Date getPlenishmentDate();
+            +void setPlenishmentDate(Date plenishmentDate);
+        }
+    }
+    package Users {
+    	enum Role {
+        	Client;
+            Operator;
+            SuperAdmin;
+        }
+        abstract User {
+        	-int id;
+        	-String login;
+            -String passwordHash
+            -Role role;
+            
+            +int getId();
+            +void setId(int id);
+            +String getLogin();
+            +void setLogin(String login);
+            +String getPasswordHash();
+            +void setPasswordHash(String passwordHash);
+            +Role getRole();
+            +void setRole(Role role);
+        }
+        class AdminUser {
+        	-int id;
+        	-String login;
+            -String passwordHash
+            -Role role;
+            -String[] permissions;
+            
+            +int getId();
+            +void setId(int id);
+            +String getLogin();
+            +void setLogin(String login);
+            +String getPasswordHash();
+            +void setPasswordHash(String passwordHash);
+            +Role getRole();
+            +void setRole(Role role);
+            +String[] getPermissions();
+            +void setPermiddions(String[] permissions);
+        }
+        class Client {
+        	-int id;
+        	-String login;
+            -String passwordHash
+            -Role role;
+            
+            +int getId();
+            +void setId(int id);
+            +String getLogin();
+            +void setLogin(String login);
+            +String getPasswordHash();
+            +void setPasswordHash(String passwordHash);
+            +Role getRole();
+            +void setRole(Role role);
+        }
+    }
+}
+
+package Repositories {
+	interface ObjectRepository <T> {
+    	+void store(T t);
+        +T retrieve(int id);
+        +T delete(int id);
+    }
+	class ZooCollectionRepository {
+    	-repository;
+    	+void store(ZooCollection zooCollection);
+        +ZooCollection retrieve(int id);
+        +ZooCollection delete(int id);
+    }
+    class ZooCollectionDescriptionRepository {
+    	-repository;
+        +void store(ZooCollectionDescription zooCollectionDescription);
+        +ZooCollectionDescription retrieve(int id);
+        +ZooCollectionDescription delete(int id);
+    }
+    class ZooCollectionStorageConditionRepository {
+    	-repository;
+        +void store(ZooCollectionStorageCondition zooCollectionStorageCondition);
+        +ZooCollectionStorageCondition retrieve(int id);
+        +ZooCollectionStorageCondition delete(int id);
+    }
+    class ZooCollectionLegalDocumentRepository {
+    	-repository;
+        +void store(ZooCollectionLegalDocument zooCollectionLegalDocument);
+        +ZooCollectionLegalDocument retrieve(int id);
+        +ZooCollectionLegalDocument delete(int id);
+    }
+    class ZooCollectionGroupRepository {
+    	-repository;
+        +void store(ZooCollectionGroup zooCollectionGroup);
+        +ZooCollectionGroup retrieve(int id);
+        +ZooCollectionGroup delete(int id);
+    }
+    class ZooCollectionObjectRepository {
+    	-repository;
+        +void store(ZooCollectionObject zooCollectionObject);
+        +ZooCollectionObject retrieve(int id);
+        +ZooCollectionObject delete(int id);
+    }
+    class UserRepository {
+    	-repository;
+        +void store(User user);
+        +User retrieve(int id);
+        +User delete(int id);
+    }
+}
+ObjectRepository <|-- ZooCollectionRepository
+ObjectRepository <|-- ZooCollectionDescriptionRepository
+ObjectRepository <|-- ZooCollectionStorageConditionRepository
+ObjectRepository <|-- ZooCollectionLegalDocumentRepository
+ObjectRepository <|-- ZooCollectionGroupRepository
+ObjectRepository <|-- ZooCollectionObjectRepository
+ObjectRepository <|-- UserRepository
+
+ZooCollectionRepository *-- ZooCollection
+DatabaseConnector *== ZooCollectionRepository
+
+ZooCollectionDescriptionRepository *-- ZooCollectionDescription
+DatabaseConnector *== ZooCollectionDescriptionRepository
+
+ZooCollectionStorageConditionRepository *-- ZooCollectionStorageCondition
+DatabaseConnector *== ZooCollectionStorageConditionRepository
+
+ZooCollectionLegalDocumentRepository *-- ZooCollectionLegalDocument
+DatabaseConnector *== ZooCollectionLegalDocumentRepository
+
+ZooCollectionGroupRepository *-- ZooCollectionGroup
+DatabaseConnector *== ZooCollectionGroupRepository
+
+ZooCollectionObjectRepository *-- ZooCollectionObject
+DatabaseConnector *== ZooCollectionObjectRepository
+
+UserRepository *-- User
+DatabaseConnector *== UserRepository
+
+ZooCollection o-- ZooCollectionDescription
+ZooCollection o-- ZooCollectionStorageCondition
+ZooCollection o-- ZooCollectionLegalDocument
+ZooCollection o-- ZooCollectionGroup
+ZooCollectionGroup o-- ZooCollectionObject
+
+
+User *-- Role
+User <|-- AdminUser
+User <|-- Client
+Client *-- ZooCollection
+@enduml
