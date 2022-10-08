@@ -1,0 +1,46 @@
+@startuml
+interface "REST" as rest 
+interface "GraphQL" as graphql
+    
+cloud {
+    interface "HTTPS" as https
+    
+	[Zoo Collection CMS] as zoocollectioncms <<service>>
+    rest -down- zoocollectioncms
+    graphql -down- zoocollectioncms
+    https -u- zoocollectioncms
+    
+    database "PostgreSQL" {
+        [Database Connection Provider] as dbprovider <<subsystem>>
+        [PostgreSQL JDBC Driver] as postgre <<component>>
+        dbprovider ..> postgre : <<use>>
+        dbprovider -u- https
+    }
+
+    database "Redis" {
+        [Session Provider] as sessionprovider <<subsystem>>
+        [Redis JDBC Driver] as redis <<component>>
+        sessionprovider ..> redis : <<use>>
+        sessionprovider -u- https
+    }
+}
+
+
+package "Client" {
+	[Zoo Collection SPA] as client <<application>>
+    
+    node {
+    	interface "IPP" as ipp 
+        note "Internet Printing Protocol" as ippnote
+        ipp -- ippnote
+        [Print Server] as printserver <<service>>
+        [Printer] as printer <<subsystem>>
+        printserver --> printer
+        ipp - printserver
+    }
+}
+
+client - ipp
+client - rest
+client - graphql
+@enduml
