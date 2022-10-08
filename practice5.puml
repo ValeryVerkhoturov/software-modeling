@@ -1,0 +1,52 @@
+@startuml
+package "Client-side" {
+	node "Client Web Browser" as client <<artifact>>
+    node "Printer" as printer <<node>>
+}
+client --> printer : <<use>>
+
+
+package "Server-side" {
+	artifact "Traefik" as traefik <<articact>>
+    note "Latest stable version" as traefiknote
+    traefik .l. traefiknote
+    
+    node "Load Balancer" as balancer <<node>>
+    artifact "Ubuntnu" as ubuntu <<articact>>
+    note "Latest LTS version" as ubuntunote
+    ubuntu .u. ubuntunote
+    
+    cloud "Web Server" as server
+    artifact "Zoo Collection CMS" as cms <<articact>>
+    artifact "Node.js" as nodejs <<articact>>
+    note "Latest LTS version" as nodejsnote
+    nodejs .u. nodejsnote
+    
+    database "Database Server" as dbserver <<database>>
+    artifact "PostgreSQL" as postgre <<artifact>>
+    note "Latest stable version" as postgrenote
+    postgre .. postgrenote
+    
+    database "Session Server" as sessionserver <<database>>
+    artifact "Redis" as redis <<artifact>>
+    note "Latest stable version" as redisnote
+    redis .. redisnote
+}
+cloud "CDN" as cdn <<node>>
+note "Cloudflare" as cdnnote
+cdn .. cdnnote
+
+
+traefik --> balancer : <<deploy>>
+balancer <-- client : <<use>>
+balancer --> server : <<use>>
+balancer <-- cdn : <<use>>
+client --> cdn : <<use>>
+postgre --> dbserver : <<deploy>>
+redis --> sessionserver : <<deploy>>
+server --> dbserver : <<use>>
+server --> sessionserver : <<use>>
+ubuntu --> server : <<deploy>>
+nodejs --> server : <<deploy>>
+cms --> server : <<deploy>>
+@enduml
