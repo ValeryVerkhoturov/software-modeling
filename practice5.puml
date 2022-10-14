@@ -7,18 +7,18 @@ client --> printer : <<use>>
 
 
 package "Server-side" {
-	artifact "Traefik" as traefik <<articact>>
+	artifact "Traefik" as traefik <<artifact>>
     note "Latest stable version" as traefiknote
     traefik .l. traefiknote
     
     node "Load Balancer" as balancer <<node>>
-    artifact "Ubuntnu" as ubuntu <<articact>>
+    artifact "Ubuntnu" as ubuntu <<artifact>>
     note "Latest LTS version" as ubuntunote
     ubuntu .u. ubuntunote
     
     cloud "Web Server" as server
-    artifact "Zoo Collection CMS" as cms <<articact>>
-    artifact "Node.js" as nodejs <<articact>>
+    artifact "Zoo Collection CMS" as cms <<artifact>>
+    artifact "Node.js" as nodejs <<artifact>>
     note "Latest LTS version" as nodejsnote
     nodejs .u. nodejsnote
     
