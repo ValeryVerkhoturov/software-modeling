@@ -59,6 +59,7 @@ group Zoo Collection
         user -> ui : Create Zoo Collection Request
         ui ->> zcentity ++ : Create Zoo Collection Request
         zcentity -> zccontrol --++ : Create Zoo Collection Request
+        destroy zcentity
         zccontrol -> postgre : Create Zoo Collection Request
         zccontrol <-- postgre : Create Zoo Collection Response
         ui <<-- zccontrol : Create Zoo Collection Response
@@ -72,6 +73,7 @@ group Zoo Collection
         zccontrol <-- postgre : Read Zoo Collection Response
         zcentity <-- zccontrol --++ : Read Zoo Collection Response
         ui <<-- zcentity : Read Zoo Collection Response
+        destroy zcentity
         user <-- ui : Read Zoo Collection Response
     end
 
@@ -79,6 +81,7 @@ group Zoo Collection
         user -> ui : Update Zoo Collection Request
         ui -> zcentity : Update Zoo Collection Request
         zcentity ->> zccontrol --++ : Update Zoo Collection Request
+        destroy zcentity
         zccontrol -> postgre : Update Zoo Collection Request
         zccontrol <-- postgre : Update Zoo Collection Response
         ui <<-- zccontrol : Update Zoo Collection Response
@@ -89,6 +92,7 @@ group Zoo Collection
         user -> ui : Delete Zoo Collection Request
         ui -> zcentity : Delete Zoo Collection Request
         zcentity ->> zccontrol --++ : Delete Zoo Collection Request
+        destroy zcentity
         zccontrol -> postgre : Delete Zoo Collection Request
         zccontrol <-- postgre : Delete Zoo Collection Response
         ui <<-- zccontrol : Delete Zoo Collection Response
@@ -102,6 +106,7 @@ group Zoo Collection Group
         user -> ui : Create Zoo Collection Group Request
         ui ->> zcgcollections ++ : Create Zoo Collection Group Request
         zcgcollections -> zcgcontrol --++ : Create Zoo Collection Group Request
+        destroy zcgcollections
         zcgcontrol -> postgre : Create Zoo Collection Group Request
         zcgcontrol <-- postgre : Create Zoo Collection Group Response
         ui <<-- zcgcontrol : Create Zoo Collection Group Response
@@ -115,6 +120,7 @@ group Zoo Collection Group
         zcgcontrol <-- postgre : Read Zoo Collection Group Response
         zcgcollections <-- zcgcontrol --++ : Read Zoo Collection Group Response
         ui <<-- zcgcollections : Read Zoo Collection Group Response
+        destroy zcgcollections
         user <-- ui : Read Zoo Collection Group Response
     end
 
@@ -122,6 +128,7 @@ group Zoo Collection Group
         user -> ui : Update Zoo Collection Group Request
         ui -> zcgcollections : Update Zoo Collection Group Request
         zcgcollections ->> zcgcontrol --++ : Update Zoo Collection Group Request
+        destroy zcgcollections
         zcgcontrol -> postgre : Update Zoo Collection Group Request
         zcgcontrol <-- postgre : Update Zoo Collection Group Response
         ui <<-- zcgcontrol : Update Zoo Collection Group Response
@@ -132,6 +139,7 @@ group Zoo Collection Group
         user -> ui : Delete Zoo Collection Group Request
         ui -> zcgcollections : Delete Zoo Collection Group Request
         zcgcollections ->> zcgcontrol --++ : Delete Zoo Collection Group Request
+        destroy zcgcollections
         zcgcontrol -> postgre : Delete Zoo Collection Group Request
         zcgcontrol <-- postgre : Delete Zoo Collection Group Response
         ui <<-- zcgcontrol : Delete Zoo Collection Group Response
@@ -145,6 +153,7 @@ group Zoo Collection Object
         user -> ui : Create Zoo Collection Object Request
         ui ->> zcocollections ++ : Create Zoo Collection Object Request
         zcocollections -> zcocontrol --++ : Create Zoo Collection Object Request
+        destroy zcocollections
         zcocontrol -> postgre : Create Zoo Collection Object Request
         zcocontrol <-- postgre : Create Zoo Collection Object Response
         ui <<-- zcocontrol : Create Zoo Collection Object Response
@@ -158,6 +167,7 @@ group Zoo Collection Object
         zcocontrol <-- postgre : Read Zoo Collection Object Response
         zcocollections <-- zcocontrol --++ : Read Zoo Collection Object Response
         ui <<-- zcocollections : Read Zoo Collection Object Response
+        destroy zcocollections
         user <-- ui : Read Zoo Collection Object Response
     end
 
@@ -165,6 +175,7 @@ group Zoo Collection Object
         user -> ui : Update Zoo Collection Object Request
         ui -> zcocollections : Update Zoo Collection Object Request
         zcocollections ->> zcocontrol --++ : Update Zoo Collection Object Request
+        destroy zcocollections
         zcocontrol -> postgre : Update Zoo Collection Object Request
         zcocontrol <-- postgre : Update Zoo Collection Object Response
         ui <<-- zcocontrol : Update Zoo Collection Object Response
@@ -175,6 +186,7 @@ group Zoo Collection Object
         user -> ui : Delete Zoo Collection Object Request
         ui -> zcocollections : Delete Zoo Collection Object Request
         zcocollections ->> zcocontrol --++ : Delete Zoo Collection Object Request
+        destroy zcocollections
         zcocontrol -> postgre : Delete Zoo Collection Object Request
         zcocontrol <-- postgre : Delete Zoo Collection Object Response
         ui <<-- zcocontrol : Delete Zoo Collection Object Response
