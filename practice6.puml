@@ -1,0 +1,189 @@
+@startuml
+autonumber
+
+
+box Frontend #Gold
+    actor User as user
+    activate user
+
+    boundary UserInterface as ui
+    activate ui
+end box
+
+control AuthenticationControl as authcontrol
+
+
+box ZooCollection #LightBlue
+    entity ZooCollectionEntity as zcentity
+    control ZooCollectionControl as zccontrol
+end box
+
+
+box ZooCollectionGroup #LightGreen
+    collections ZooCollectionGroupCollections as zcgcollections
+    control ZooCollectionGroupControl as zcgcontrol
+end box
+
+box ZooCollectionObject #LightPink
+    collections ZooCollectionObjectCollections as zcocollections
+    control ZooCollectionObjectControl as zcocontrol
+end box
+
+
+database PostgreSQL as postgre
+activate postgre
+
+
+loop Is Authenticated
+    user -> ui : Authentification Request
+    activate ui
+    ui ->> authcontrol ++ : Authentification Request
+    authcontrol -> postgre ++ : Authentification Request
+
+    alt Succesful
+        postgre --> authcontrol : Authentification Accepted
+        authcontrol -->> ui : Authentification Accepted
+        ui --> user : Authentification Accepted
+    else Failure
+        postgre --> authcontrol -- : Authentification Rejected
+        authcontrol -->> ui -- : Authentification Rejected
+        ui -->x user : Authentification Rejected
+        deactivate ui
+    end
+end
+
+autoactivate on
+    
+group Zoo Collection
+    group Create Zoo Collection
+        user -> ui : Create Zoo Collection Request
+        ui ->> zcentity ++ : Create Zoo Collection Request
+        zcentity -> zccontrol --++ : Create Zoo Collection Request
+        zccontrol -> postgre : Create Zoo Collection Request
+        zccontrol <-- postgre : Create Zoo Collection Response
+        ui <<-- zccontrol : Create Zoo Collection Response
+        user <-- ui : Create Zoo Collection Response
+	end
+
+    group Read Zoo Collection
+        user -> ui : Read Zoo Collection Request
+        ui ->> zccontrol : Read Zoo Collection Request
+        zccontrol -> postgre : Read Zoo Collection Request
+        zccontrol <-- postgre : Read Zoo Collection Response
+        zcentity <-- zccontrol --++ : Read Zoo Collection Response
+        ui <<-- zcentity : Read Zoo Collection Response
+        user <-- ui : Read Zoo Collection Response
+    end
+
+    group Update Zoo Collection
+        user -> ui : Update Zoo Collection Request
+        ui -> zcentity : Update Zoo Collection Request
+        zcentity ->> zccontrol --++ : Update Zoo Collection Request
+        zccontrol -> postgre : Update Zoo Collection Request
+        zccontrol <-- postgre : Update Zoo Collection Response
+        ui <<-- zccontrol : Update Zoo Collection Response
+        user <-- ui : Update Zoo Collection Response
+    end
+
+    group Delete Zoo Collection
+        user -> ui : Delete Zoo Collection Request
+        ui -> zcentity : Delete Zoo Collection Request
+        zcentity ->> zccontrol --++ : Delete Zoo Collection Request
+        zccontrol -> postgre : Delete Zoo Collection Request
+        zccontrol <-- postgre : Delete Zoo Collection Response
+        ui <<-- zccontrol : Delete Zoo Collection Response
+        user <-- ui : Delete Zoo Collection Response
+    end
+end
+
+
+group Zoo Collection Group
+    group Create Zoo Collection Group
+        user -> ui : Create Zoo Collection Group Request
+        ui ->> zcgcollections ++ : Create Zoo Collection Group Request
+        zcgcollections -> zcgcontrol --++ : Create Zoo Collection Group Request
+        zcgcontrol -> postgre : Create Zoo Collection Group Request
+        zcgcontrol <-- postgre : Create Zoo Collection Group Response
+        ui <<-- zcgcontrol : Create Zoo Collection Group Response
+        user <-- ui : Create Zoo Collection Group Response
+	end
+
+    group Read Zoo Collection Group
+        user -> ui : Read Zoo Collection Group Request
+        ui ->> zcgcontrol : Read Zoo Collection Group Request
+        zcgcontrol -> postgre : Read Zoo Collection Group Request
+        zcgcontrol <-- postgre : Read Zoo Collection Group Response
+        zcgcollections <-- zcgcontrol --++ : Read Zoo Collection Group Response
+        ui <<-- zcgcollections : Read Zoo Collection Group Response
+        user <-- ui : Read Zoo Collection Group Response
+    end
+
+    group Update Zoo Collection Group
+        user -> ui : Update Zoo Collection Group Request
+        ui -> zcgcollections : Update Zoo Collection Group Request
+        zcgcollections ->> zcgcontrol --++ : Update Zoo Collection Group Request
+        zcgcontrol -> postgre : Update Zoo Collection Group Request
+        zcgcontrol <-- postgre : Update Zoo Collection Group Response
+        ui <<-- zcgcontrol : Update Zoo Collection Group Response
+        user <-- ui : Update Zoo Collection Group Response
+    end
+
+    group Delete Zoo Collection Group
+        user -> ui : Delete Zoo Collection Group Request
+        ui -> zcgcollections : Delete Zoo Collection Group Request
+        zcgcollections ->> zcgcontrol --++ : Delete Zoo Collection Group Request
+        zcgcontrol -> postgre : Delete Zoo Collection Group Request
+        zcgcontrol <-- postgre : Delete Zoo Collection Group Response
+        ui <<-- zcgcontrol : Delete Zoo Collection Group Response
+        user <-- ui : Delete Zoo Collection Group Response
+    end
+end
+
+
+group Zoo Collection Object
+    group Create Zoo Collection Object
+        user -> ui : Create Zoo Collection Object Request
+        ui ->> zcocollections ++ : Create Zoo Collection Object Request
+        zcocollections -> zcocontrol --++ : Create Zoo Collection Object Request
+        zcocontrol -> postgre : Create Zoo Collection Object Request
+        zcocontrol <-- postgre : Create Zoo Collection Object Response
+        ui <<-- zcocontrol : Create Zoo Collection Object Response
+        user <-- ui : Create Zoo Collection Object Response
+	end
+
+    group Read Zoo Collection Object
+        user -> ui : Read Zoo Collection Object Request
+        ui ->> zcocontrol : Read Zoo Collection Object Request
+        zcocontrol -> postgre : Read Zoo Collection Object Request
+        zcocontrol <-- postgre : Read Zoo Collection Object Response
+        zcocollections <-- zcocontrol --++ : Read Zoo Collection Object Response
+        ui <<-- zcocollections : Read Zoo Collection Object Response
+        user <-- ui : Read Zoo Collection Object Response
+    end
+
+    group Update Zoo Collection Object
+        user -> ui : Update Zoo Collection Object Request
+        ui -> zcocollections : Update Zoo Collection Object Request
+        zcocollections ->> zcocontrol --++ : Update Zoo Collection Object Request
+        zcocontrol -> postgre : Update Zoo Collection Object Request
+        zcocontrol <-- postgre : Update Zoo Collection Object Response
+        ui <<-- zcocontrol : Update Zoo Collection Object Response
+        user <-- ui : Update Zoo Collection Object Response
+    end
+
+    group Delete Zoo Collection Object
+        user -> ui : Delete Zoo Collection Object Request
+        ui -> zcocollections : Delete Zoo Collection Object Request
+        zcocollections ->> zcocontrol --++ : Delete Zoo Collection Object Request
+        zcocontrol -> postgre : Delete Zoo Collection Object Request
+        zcocontrol <-- postgre : Delete Zoo Collection Object Response
+        ui <<-- zcocontrol : Delete Zoo Collection Object Response
+        user <-- ui : Delete Zoo Collection Object Response
+    end
+end
+    
+
+deactivate ui
+deactivate user
+deactivate postgre
+@enduml
