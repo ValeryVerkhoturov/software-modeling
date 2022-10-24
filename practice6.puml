@@ -33,6 +33,11 @@ end box
 database PostgreSQL as postgre
 activate postgre
 
+activate authcontrol
+activate zccontrol
+activate zcgcontrol
+activate zcocontrol
+
 
 loop Is Authenticated
     user -> ui : Authentification Request
