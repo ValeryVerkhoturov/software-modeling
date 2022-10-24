@@ -1,0 +1,64 @@
+@startuml
+rectangle Frontend #Gold {
+    actor :User: as user
+    boundary UserInterface as ui
+}
+
+
+control AuthenticationControl as authcontrol
+
+
+rectangle ZooCollection #LightBlue {
+    entity ZooCollectionEntity as zcentity
+    control ZooCollectionControl as zccontrol
+}
+
+/'
+rectangle ZooCollectionGroup #LightGreen {
+    collections ZooCollectionGroupCollections as zcgcollections
+    control ZooCollectionGroupControl as zcgcontrol
+}
+
+rectangle ZooCollectionObject #LightPink {
+    collections ZooCollectionObjectCollections as zcocollections
+    control ZooCollectionObjectControl as zcocontrol
+} '/
+
+database PostgreSQL as postgre
+
+
+
+
+user -- ui : <&arrow-thick-right> Authentification Request \n <&arrow-thick-left> Authentification Response
+ui -- authcontrol : <&arrow-thick-right> Authentification Request \n <&arrow-thick-left> Authentification Response
+authcontrol -- postgre : <&arrow-thick-right> Authentification Request \n <&arrow-thick-left> Authentification Response
+
+
+user -- ui : <&arrow-thick-right> Create Zoo Collection Request \n <&arrow-thick-left> Create Zoo Collection Response
+' ui -- zcentity : <&arrow-thick-right> Create Zoo Collection Request \n <&arrow-thick-left> Create Zoo Collection Response
+zcentity -- zccontrol : <&arrow-thick-right> Create Zoo Collection Request
+zccontrol -- postgre : <&arrow-thick-right> Create Zoo Collection Request \n <&arrow-thick-left> Create Zoo Collection Response
+zccontrol -- ui : <&arrow-thick-left> Create Zoo Collection Response
+
+user -- ui : <&arrow-thick-right> Read Zoo Collection Request \n <&arrow-thick-left> Read Zoo Collection Response
+ui -- zccontrol : <&arrow-thick-right> Read Zoo Collection Request \n <&arrow-thick-left> Read Zoo Collection Response
+zccontrol -- postgre : <&arrow-thick-right> Read Zoo Collection Request \n <&arrow-thick-left> Read Zoo Collection Response
+zccontrol -- zcentity : <&arrow-thick-left> Read Zoo Collection Response
+' zcentity -- ui : <&arrow-thick-left> Read Zoo Collection Response
+
+user -- ui : <&arrow-thick-right> Update Zoo Collection Request \n <&arrow-thick-left> Update Zoo Collection Response
+' ui -- zcentity : <&arrow-thick-right> Update Zoo Collection Request \n <&arrow-thick-left> Update Zoo Collection Response
+zcentity -- zccontrol : <&arrow-thick-right> Update Zoo Collection Request
+zccontrol -- postgre : <&arrow-thick-right> Update Zoo Collection Request \n <&arrow-thick-left> Update Zoo Collection Response
+zccontrol -- ui : <&arrow-thick-left> Update Zoo Collection Response
+
+user -- ui : <&arrow-thick-right> Delete Zoo Collection Request \n <&arrow-thick-left> Delete Zoo Collection Response
+' ui -- zcentity : <&arrow-thick-right> Delete Zoo Collection Request \n <&arrow-thick-left> Delete Zoo Collection Response
+zcentity -- zccontrol : <&arrow-thick-right> Delete Zoo Collection Request
+zccontrol -- postgre : <&arrow-thick-right> Delete Zoo Collection Request \n <&arrow-thick-left> Delete Zoo Collection Response
+zccontrol -- ui : <&arrow-thick-left> Delete Zoo Collection Response
+
+
+
+ui -- zcentity : <&arrow-thick-right> Create Zoo Collection Request \n <&arrow-thick-left> Create Zoo Collection Response \n <&arrow-thick-left> Read Zoo Collection Response \n <&arrow-thick-right> Update Zoo Collection Request \n <&arrow-thick-left> Update Zoo Collection Response \n <&arrow-thick-right> Delete Zoo Collection Request \n <&arrow-thick-left> Delete Zoo Collection Response
+@enduml
