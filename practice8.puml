@@ -1,0 +1,66 @@
+@startuml
+start
+
+if (Is user registered?) then (yes)
+    if (Does user remember login, password?) then (yes)
+    else (no)
+        repeat
+            :Enter telephone number;
+            repeat
+                if (Would user like to change telephone number) then (yes)
+                    break
+                else (no)
+                    :Enter code from SMS;
+                endif
+            repeat while (Is SMS code correct?) is (no) not (yes)
+        repeat while (Is SMS code entered?) is (no) not (yes)
+
+        if (Did user forget login or password?) then (login)
+            :Enter new login;
+            :Repeat new login;
+        else (password)
+            :Enter new password;
+            :Repeat new password;
+        endif
+    endif
+else (no)
+	group Registration
+        :Enter login, password;
+        repeat
+            :Enter telephone number;
+            repeat
+                if (Would user like to change telephone number) then (yes)
+                    break
+                else (no)
+                    :Enter code from SMS;
+                endif
+            repeat while (Is SMS code correct?) is (no) not (yes)
+        repeat while (Is SMS code entered?) is (no) not (yes)
+    end group
+endif
+
+repeat
+	:Enter login, password;
+repeat while (Is login, password correct?) is (no) not (yes)
+
+repeat
+    if (Would user like to edit zoo collections?) then (yes)
+        :Create, read, update or delete zoo collection;
+    elseif (Wold user like to edit zoo groups?) then (yes)
+        :Create, read, update or delete zoo group;
+    elseif (Would user like to edit zoo objects?) then (yes)
+        :Create, read, update or delete zoo object;
+    elseif (Would user like to generate report?) then (yes)
+        fork
+            :View report;
+        fork again
+            if (Would user like to print report?) then (yes)
+                :Get printed report;
+            endif
+        end fork
+    endif
+repeat while (Whoud user like to exit?) is (no) not (yes)
+
+
+stop
+@enduml
