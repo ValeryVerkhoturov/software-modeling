@@ -46,7 +46,7 @@ repeat while (Is login, password correct?) is (no) not (yes)
 repeat
     if (Would user like to edit zoo collections?) then (yes)
         :Create, read, update or delete zoo collection;
-    (no) elseif (Wold user like to edit zoo groups?) then (yes)
+    (no) elseif (Would user like to edit zoo groups?) then (yes)
         :Create, read, update or delete zoo group;
     (no) elseif (Would user like to edit zoo objects?) then (yes)
         :Create, read, update or delete zoo object;
@@ -59,7 +59,7 @@ repeat
             endif
         end fork
     endif
-repeat while (Whoud user like to exit?) is (no) not (yes)
+repeat while (Would user like to exit?) is (no) not (yes)
 
 
 stop
