@@ -1,0 +1,64 @@
+@startuml
+[*] --> userIsRegistered
+userIsRegistered : to enter name
+userIsRegistered : to enter email
+userIsRegistered : to enter password
+userIsRegistered : to repeat password
+
+userIsRegistered --> userIsAuthenticated : Succeeded
+
+userIsAuthenticated : to enter correct login
+userIsAuthenticated : to enter correct password
+
+userIsAuthenticated --> userIsBlocked : Aborted
+userIsBlocked : to enter too many incorrect logins
+userIsBlocked : to enter too many incorrect passwords
+
+userIsBlocked --> [*] : Succeeded
+
+state systemIsUsed {
+	state JWTtoken <<entryPoint>>
+    
+    JWTtoken --> zooCollectionIsCreated
+    zooCollectionIsCreated --> zooCollectionIsCreated : Aborted
+    zooCollectionIsCreated : to enter required fields
+
+    zooCollectionIsCreated --> zooGroupIsCreated : Succeeded
+    zooGroupIsCreated --> zooGroupIsCreated : Aborted
+    zooGroupIsCreated : to enter required fields
+
+    zooGroupIsCreated --> zooObjectIsCreated : Succeeded
+    zooObjectIsCreated --> zooObjectIsCreated : Aborted
+    zooObjectIsCreated : to enter required fields
+    
+    
+    JWTtoken --> zooCollectionIsEdited
+    zooCollectionIsEdited --> zooCollectionIsEdited : Aborted
+    zooCollectionIsEdited : to edit any field
+
+    zooCollectionIsEdited --> zooGroupIsEdited : Succeeded
+    zooGroupIsEdited --> zooGroupIsEdited : Aborted
+    zooGroupIsEdited : to edit any field
+
+    zooGroupIsEdited --> zooObjectIsEdited : Succeeded
+    zooObjectIsEdited --> zooObjectIsEdited : Aborted
+    zooObjectIsEdited : to edit any field
+    
+    
+    JWTtoken --> zooObjectIsDeleted
+    zooObjectIsDeleted --> zooObjectIsDeleted : Aborted
+    zooObjectIsDeleted : to delete all zoo objects
+
+    zooObjectIsDeleted --> zooGroupIsDeleted : Succeeded
+    zooGroupIsDeleted --> zooGroupIsDeleted : Aborted
+    zooGroupIsDeleted : to delete all zoo groups
+
+    zooGroupIsDeleted --> zooCollectionIsDeleted : Succeeded
+    zooCollectionIsDeleted --> zooCollectionIsDeleted : Aborted
+    zooCollectionIsDeleted : to edit any field
+    
+}
+
+userIsAuthenticated --> JWTtoken : Succeeded
+systemIsUsed --> [*] : Succeeded
+@enduml
